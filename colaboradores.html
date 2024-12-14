@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colaboradores - Paleto Exotics</title>
+    <style>
+        /* Estilos comunes */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1c1c1c;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Asegura que el contenido ocupe al menos el 100% de la altura de la pantalla */
+            overflow-x: hidden; /* Previene el scroll horizontal */
+        }
+        header {
+            background-color: #8b0000;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            color: #fff;
+            font-size: 3em;
+            text-shadow: 2px 2px 5px #000;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #b22222;
+            padding: 15px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        nav a:hover {
+            color: #ff4500;
+            text-decoration: underline;
+        }
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            background-color: #2b2b2b;
+            border-radius: 8px;
+            max-width: 1200px;
+            text-align: center;
+            margin-bottom: 50px; /* Añadido para evitar que el contenido se pegue al footer */
+        }
+        section h2 {
+            color: #ff4500;
+        }
+        .collaborators {
+            display: flex;
+            justify-content: space-between; /* Alinea los logos con espacio entre ellos */
+            flex-wrap: wrap;
+            margin-top: 30px;
+            padding: 0 50px; /* Añade margen horizontal extra para aumentar la separación */
+        }
+        .collaborators img {
+            max-width: 150px; /* Ajusta el tamaño de los logotipos */
+            margin: 0 100px; /* Añade separación de 100px entre cada imagen */
+        }
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .logo-container img {
+            max-width: 200px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #8b0000;
+            color: #fff;
+            margin-top: auto; /* Esto asegura que el footer siempre se quede abajo */
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Paleto Exotics</h1>
+</header>
+
+<nav>
+    <a href="index.html">Inicio</a>
+    <a href="productos.html">Productos</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="especialidad.html">Especialidad</a>
+    <a href="colaboradores.html">Colaboradores</a>
+</nav>
+
+<section>
+    <h2>Colaboradores</h2>
+    <div class="collaborators">
+        <img src="images/LogoBeni.png" alt="Logo de BeniZakura">
+        <img src="images/LogoWeazel.png" alt="Logo de Weazel News">
+        <img src="images/LogoBadu.png" alt="Logo de Badulaque Ruta 68">
+    </div>
+</section>
+
+<div class="logo-container">
+    <img src="images/Logo.png" alt="Logo de Paleto Exotics">
+</div>
+
+<footer>
+    <p>&copy; 2024 Paleto Exotics. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
+
