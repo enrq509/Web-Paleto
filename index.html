@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Paleto Exotics</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: #1c1c1c;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden; /* Elimina el scroll */
+        }
+
+        header {
+            background-color: #8b0000;
+            padding: 10px 20px;
+            text-align: center;
+            flex-shrink: 0; /* Evita que el header se achique */
+        }
+
+        header h1 {
+            color: #fff;
+            font-size: 2.2em;
+            text-shadow: 2px 2px 5px #000;
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #b22222;
+            padding: 8px 0;
+            box-sizing: border-box;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 1em;
+        }
+
+        nav a:hover {
+            color: #ff4500;
+            text-decoration: underline;
+        }
+
+        .hero {
+            background: url('workshop-hero.jpg') no-repeat center center/cover;
+            height: 80vh; /* Ajusta la altura al 80% del viewport */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-shadow: 2px 2px 10px #000;
+            margin-bottom: 0;
+        }
+
+        .hero h2 {
+            font-size: 2.5em; /* Aumentar tamaño de texto */
+            margin: 0;
+        }
+
+        .logo {
+            text-align: center;
+            margin-top: -40px; /* Ajusta el logo más arriba */
+        }
+
+        .logo img {
+            width: 150px; /* Ajustar tamaño de logo */
+            height: auto;
+        }
+
+        .join-team {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 30px;
+            flex-shrink: 0;
+            margin-bottom: 20px; /* Espacio entre el botón y el footer */
+        }
+
+        .join-team a {
+            color: #ff4500;
+            font-size: 1.1em;
+            text-decoration: none;
+            padding: 10px 30px;
+            border: 2px solid #ff4500;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: inline-block;
+            width: auto; /* Aseguramos que el botón tenga un tamaño adecuado */
+        }
+
+        .join-team a:hover {
+            background-color: #ff4500;
+            color: #fff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #8b0000;
+            color: #fff;
+            margin-top: auto;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 8px 18px;
+            margin: 10px auto;
+            color: #fff;
+            background-color: #ff4500;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #e63900;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.1em;
+        }
+
+        .links a:hover {
+            color: #ff4500;
+        }
+
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            z-index: 9999;
+            pointer-events: none;
+            font-size: 2em;
+            color: #fff;
+            user-select: none;
+            animation-name: snowfall;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes snowfall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+
+        .images-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 5%; /* Reducido para que se ajuste mejor */
+        }
+
+        .images-container img {
+            width: 40%; /* Reducir el tamaño de las imágenes */
+            height: auto;
+            border: 5px solid #ff4500; /* Borde naranja */
+            border-radius: 10px; /* Bordes redondeados */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+        }
+
+        /* Efecto cuando el ratón pasa por encima de la imagen */
+        .images-container img:hover {
+            transform: scale(1.1); /* Aumenta el tamaño de la imagen */
+            box-shadow: 0 0 20px rgba(255, 69, 0, 0.7); /* Agrega una sombra suave */
+        }
+
+        /* Estilos para el reproductor de música */
+        .audio-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #volumeControl {
+            -webkit-appearance: none; /* Elimina el estilo predeterminado del slider en Safari */
+            appearance: none;
+            width: 200px;
+            height: 8px;
+            background: #ddd;
+            border-radius: 5px;
+            outline: none;
+            transition: background 0.3s ease;
+        }
+
+        #volumeControl::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #ff4500;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        #volumeControl::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #ff4500;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        #volumeControl:hover {
+            background: #ff7f50;
+        }
+
+        #volumeControl::-webkit-slider-thumb:hover {
+            background: #e63900;
+        }
+
+        #volumeControl::-moz-range-thumb:hover {
+            background: #e63900;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Paleto Exotics</h1>
+</header>
+
+<nav>
+    <a href="index.html">Inicio</a>
+    <a href="productos.html">Productos</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="especialidad.html">Especialidad</a>
+    <a href="colaboradores.html">Colaboradores</a>
+</nav>
+
+<div class="hero">
+    <h2>Conoce más sobre nosotros</h2>
+</div>
+
+<!-- Sección de imágenes alineadas -->
+<div class="images-container">
+    <img src="images/Nosotros1.png" alt="Imagen 1">
+    <img src="images/Nosotros2.png" alt="Imagen 2">
+</div>
+
+<!-- Sección del logo centrado -->
+<div class="logo">
+    <img src="images/Logo.png" alt="Logo de Paleto Exotics">
+</div>
+
+<!-- Botón que lleva al formulario -->
+<div class="join-team">
+    <p>¡Únete a nuestro equipo!</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfqfzr50kJ0RZFKVACaKQWSrUbyobEI6v9S8Bvt82lIWsOtxw/viewform" target="_blank">
+        ¡Click Aquí!</a>
+</div>
+
+<!-- Reproductor de música con control de volumen -->
+<div class="audio-container">
+    <audio id="audioPlayer" autoplay loop>
+        <source src="Musica2.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+    <div>
+        <label for="volumeControl">Volumen:</label>
+        <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="1" />
+    </div>
+</div>
+
+<!-- El footer con los derechos de autor al final -->
+<footer>
+    <p>&copy; 2024 Paleto Exotics. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+// Efecto de nieve continua
+(function() {
+    var numberOfSnowflakes = 100;
+    var snowflakes = [];
+    var snowflakeElement;
+    
+    for (var i = 0; i < numberOfSnowflakes; i++) {
+        snowflakeElement = document.createElement('div');
+        snowflakeElement.classList.add('snowflake');
+        snowflakeElement.textContent = '❄'; 
+        snowflakeElement.style.left = Math.random() * 100 + '%';
+        snowflakeElement.style.animationDuration = Math.random() * 3 + 2 + 's'; 
+        snowflakeElement.style.animationDelay = Math.random() * 5 + 's';
+        document.body.appendChild(snowflakeElement);
+        snowflakes.push(snowflakeElement);
+    }
+})();
+
+// Control del volumen con JavaScript
+document.getElementById('volumeControl').addEventListener('input', function () {
+    var audioPlayer = document.getElementById('audioPlayer');
+    audioPlayer.volume = this.value;
+});
+</script>
+
+</body>
+</html>

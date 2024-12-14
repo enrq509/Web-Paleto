@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de música</title>
+</head>
+<body>
+    <audio id="audioPlayer" autoplay loop>
+        <source src="Musica.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+    <script>
+        // Mantener la música en reproducción sin reiniciar al cambiar de página
+        const audio = document.getElementById('audioPlayer');
+        audio.play();
+    </script>
+</body>
+</html>

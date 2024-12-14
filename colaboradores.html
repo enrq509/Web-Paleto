@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colaboradores - Paleto Exotics</title>
+    <style>
+        /* Estilos comunes */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1c1c1c;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow: hidden; /* Elimina el scroll */
+        }
+        header {
+            background-color: #8b0000;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        header h1 {
+            color: #fff;
+            font-size: 3em;
+            text-shadow: none;
+        }
+        header:hover {
+            transform: scale(1.05); /* Agranda el header al pasar el ratón */
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #b22222;
+            padding: 15px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #ff4500;
+            text-decoration: underline;
+        }
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            background-color: #2b2b2b;
+            border-radius: 8px;
+            max-width: 1200px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(255, 69, 0, 0.4); /* Sombra en la sección */
+            transition: box-shadow 0.3s ease;
+        }
+        section:hover {
+            box-shadow: 0 0 30px rgba(255, 69, 0, 0.6); /* Intensificar sombra en hover */
+        }
+        section h2 {
+            color: #ff4500;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+        section h2:hover {
+            color: #ff7f50; /* Cambio de color al pasar el ratón */
+        }
+        .collaborators {
+            display: flex;
+            justify-content: space-between; /* Alinea los logos con espacio entre ellos */
+            margin-top: 30px;
+            padding: 0 50px;
+        }
+        .collaborators img {
+            max-width: 150px;
+            margin: 0 50px; /* Separación entre imágenes */
+            border-radius: 10px; /* Bordes redondeados */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .collaborators img:hover {
+            transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el ratón */
+            box-shadow: 0 0 15px rgba(255, 69, 0, 0.6); /* Sombra más prominente */
+        }
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .logo-container img {
+            max-width: 200px;
+            border-radius: 8px; /* Borde redondeado para el logo de Paleto Exotics */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .logo-container img:hover {
+            transform: scale(1.05); /* Agrandar logo al pasar el ratón */
+            box-shadow: 0 0 10px rgba(255, 69, 0, 0.6); /* Sombra más suave */
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #8b0000;
+            color: #fff;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+        footer:hover {
+            transform: scale(1.05); /* Agrandar footer al pasar el ratón */
+        }
+
+        /* Estilos para el reproductor de música */
+        .audio-container {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #2b2b2b;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        label {
+            font-size: 1.1em;
+            color: #fff;
+        }
+
+        /* Efecto de nieve */
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            z-index: 9999;
+            pointer-events: none;
+            font-size: 2em;
+            color: #fff;
+            user-select: none;
+            animation-name: snowfall;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes snowfall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Paleto Exotics</h1>
+</header>
+
+<nav>
+    <a href="index.html">Inicio</a>
+    <a href="productos.html">Productos</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="especialidad.html">Especialidad</a>
+    <a href="colaboradores.html">Colaboradores</a>
+</nav>
+
+<section>
+    <h2>Colaboradores</h2>
+    <div class="collaborators">
+        <img src="images/LogoBeni.png" alt="Logo de BeniZakura">
+        <img src="images/LogoWeazel.png" alt="Logo de Weazel News">
+        <img src="images/LogoBadu.png" alt="Logo de Badulaque Ruta 68">
+    </div>
+</section>
+
+<div class="logo-container">
+    <img src="images/Logo.png" alt="Logo de Paleto Exotics">
+</div>  
+
+<!-- Reproductor de música con volumen fijo al 30% -->
+    <audio id="audioPlayer" autoplay loop>
+        <source src="Musica.mp3" type="audio/mpeg">
+    </audio>
+</div>
+
+<footer>
+    <p>&copy; 2024 Paleto Exotics. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+// Efecto de nieve continua
+(function() {
+    var numberOfSnowflakes = 100;
+    for (var i = 0; i < numberOfSnowflakes; i++) {
+        var snowflakeElement = document.createElement('div');
+        snowflakeElement.classList.add('snowflake');
+        snowflakeElement.textContent = '❄'; 
+        snowflakeElement.style.left = Math.random() * 100 + '%';
+        snowflakeElement.style.animationDuration = Math.random() * 3 + 2 + 's'; 
+        snowflakeElement.style.animationDelay = Math.random() * 5 + 's';
+        document.body.appendChild(snowflakeElement);
+    }
+})();
+
+// Establecer el volumen al 30% desde el inicio
+var audioPlayer = document.getElementById('audioPlayer');
+audioPlayer.volume = 0.3; // Volumen fijo al 30%
+</script>
+
+</body>
+</html>
+
